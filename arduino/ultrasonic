@@ -1,0 +1,16 @@
+#include <NewPing.h>
+
+#define trigPin 9
+#define echoPin 10
+
+NewPing sonar(trigPin, echoPin);
+
+void setup() {
+  Serial.begin(9600);
+}
+
+void loop() {
+  delay(1000);
+  unsigned int distance = sonar.ping_cm();
+  Serial.println(distance);
+}
